@@ -45,10 +45,23 @@ genNum = randomNumber(genNum);
 const sum = insertedNum + genNum;
 console.log(`Totale: ${sum} ${checkOddEven(sum)}`)
 
+/**
+ * Generates a random number
+ * 
+ * @param number // parameter used to generate a random number
+ * @returns // returns a random number between 1 and 5 included.
+ */
 function randomNumber(number){
     number = Math.floor(Math.random() * 5 + 1);
     return number;
 }
+
+/**
+ * Check if the sum is odd or even and declare a winner
+ * 
+ * @param totalSum // parameter used to check if the sum is odd or even
+ * @returns // return a string that checks if the sum is odd or even
+ */
 
 function checkOddEven(totalSum){
     if(totalSum % 2 === 0){
