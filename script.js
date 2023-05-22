@@ -29,7 +29,7 @@ console.log(palindromeCheck(insertedWord));
 
 const insertedNum = parseInt(prompt('Inserisci un numero da 1 a 5.'));
 let pickOddEven = prompt('Scegli pari o dispari');
-let genNum = 0;
+let genNum;
 
 
 while (insertedNum < 1 || insertedNum > 5 || isNaN(insertedNum)){
