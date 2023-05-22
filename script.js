@@ -40,7 +40,7 @@ while (pickOddEven !== 'pari' && pickOddEven !== 'dispari'){
 genNum = randomNumber(genNum);
 
 const sum = insertedNum + genNum;
-console.log(`Totale: ${sum} ${checkOddEven(sum)}`);
+console.log(`Totale: ${sum} ${checkOddEven(sum, pickOddEven)}`);
 
 /**
  * Generates a random number
@@ -60,10 +60,16 @@ function randomNumber(number){
  * @returns // return a string that checks if the sum is odd or even
  */
 
-function checkOddEven(totalSum){
-    if(totalSum % 2 === 0){
-        return 'Pari vince.';
+function checkOddEven(totalSum, userPick){
+    if(totalSum % 2 === 0 && userPick === 'pari'){
+        return 'Hai scelto pari, hai vinto!';
+    } else if(totalSum % 2 === 0 && userPick === 'dispari'){
+        return 'Hai scelto dispari. Hai perso';
+    } else if(totalSum % 2 !== 0 && userPick === 'pari'){
+        return 'Hai scelto pari. Hai perso.';
+    } else if(totalSum % 2 !== 0 && userPick === 'dispari'){
+        return 'Hai scelto dispari, hai vinto!';
     }
-    return 'Dispari vince.';
+
 }
 
