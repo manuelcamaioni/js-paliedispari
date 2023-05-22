@@ -10,53 +10,50 @@
 // 1 - Scriviamo sempre in italiano i passaggi che vogliamo fare
 // 2 - Scriviamo sempre solo un pezzetto di codice alla volta, se funziona allora andiamo avanti.
 
-// const insertedWord = prompt('Inserisci una parola o una frase.');
+const insertedWord = prompt('Inserisci una parola o una frase.');
 
-// function palindromeCheck(string){
-//     const re = /[\W_]/g; // variabile che rimuove dalla stringa tutti i caratteri non alfanumerici da a a z / da A a Z/ da 0 a 9
-//     const lowRegStr = string.toLowerCase().replace(re, ''); //creazione di un'altra variabile per inserire la stringa in lowercase e sostituire i caratteri speciali con ''
-//     const reverseStr = lowRegStr.split('').reverse().join(''); // in un'altra variabile si splitta ogni carattere e si crea un array, si capovolgel'ordine e si riunisce il tutto in un unica stringa
-//     return reverseStr === lowRegStr; //la funzione controlla se la variabile con la stringa invertita equivale a quella normale e restituisce un valore booleano 
-//   }
+function palindromeCheck(string){
+    const re = /[\W_]/g; // variabile che rimuove dalla stringa tutti i caratteri non alfanumerici da a a z / da A a Z/ da 0 a 9
+    const lowRegStr = string.toLowerCase().replace(re, ''); //creazione di un'altra variabile per inserire la stringa in lowercase e sostituire i caratteri speciali con ''
+    const reverseStr = lowRegStr.split('').reverse().join(''); // in un'altra variabile si splitta ogni carattere e si crea un array, si capovolgel'ordine e si riunisce il tutto in un unica stringa
+    return reverseStr === lowRegStr; //la funzione controlla se la variabile con la stringa invertita equivale a quella normale e restituisce un valore booleano 
+  }
 
 
-// console.log(insertedWord);
-// console.log(palindromeCheck(insertedWord));
+console.log(insertedWord);
+console.log(palindromeCheck(insertedWord));
 
 
 // PARI E DISPARI
 
 
-let insertedNum = parseInt(prompt('Inserisci un numero da 1 a 5.'));
-console.log(`Numero scelto dal giocatore: ${insertedNum}`);
-let genNum;
-// let sum = insertedNum + genNum;
+const insertedNum = parseInt(prompt('Inserisci un numero da 1 a 5.'));
+let pickOddEven = prompt('Scegli pari o dispari');
+let genNum = 0;
+
 
 while (insertedNum < 1 || insertedNum > 5 || isNaN(insertedNum)){
     insertedNum = parseInt(prompt('Inserisci un numero da 1 a 5.'));
 }
 
-
-
-
-while (insertedNum === genNum || insertedNum % 2 === 0 && genNum % 2 === 0 || insertedNum % 2 !== 0 && genNum % 2 !== 0){
-          
-    randomNumber(genNum);
+while (pickOddEven != 'pari' && pickOddEven != 'dispari'){
+    pickOddEven = prompt('Scegli pari o dispari.');
 }
-// console.log(checkOddEven(sum));
-console.log(`Numero scelto dal computer: ${randomNumber(genNum)}`);
 
+genNum = randomNumber(genNum);
 
+const sum = insertedNum + genNum;
+console.log(`Totale: ${sum} ${checkOddEven(sum)}`)
 
 function randomNumber(number){
     number = Math.floor(Math.random() * 5 + 1);
     return number;
 }
 
-// function checkOddEven(totalSum){
-//     if(totalSum % 2 === 0){
-//         return 'Ha vinto pari.';
-//     }
-//     return 'Ha vinto dispari.'
-// }
+function checkOddEven(totalSum){
+    if(totalSum % 2 === 0){
+        return 'Pari vince.';
+    }
+    return 'Dispari vince.'
+}
 
