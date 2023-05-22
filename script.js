@@ -13,7 +13,7 @@
 const insertedWord = prompt('Inserisci una parola o una frase.');
 
 function palindromeCheck(string){
-    const re = /[\W_]/g; // variabile che rimuove dalla stringa tutti i caratteri non alfanumerici, da a a z / da A a Z/ da 0 a 9 unici caratteri permessi
+    const re = /[\W_]/g; // variabile che rimuove dalla stringa tutti i caratteri non alfanumerici, da a a z / da A a Z / da 0 a 9 unici caratteri permessi
     const lowRegStr = string.toLowerCase().replace(re, ''); // creazione di un'altra variabile per inserire la stringa in lowercase e sostituire i caratteri speciali con una stringa vuota ''
     const reverseStr = lowRegStr.split('').reverse().join(''); // in un'altra variabile si splitta ogni carattere e si crea un array, s'inverte l'ordine degli elementi e si riunisce il tutto in un'unica stringa
     return reverseStr === lowRegStr; // la funzione controlla se la variabile con la stringa invertita equivale a quella normale e restituisce un valore booleano 
@@ -23,14 +23,11 @@ function palindromeCheck(string){
 console.log(insertedWord);
 console.log(palindromeCheck(insertedWord));
 
-
 // PARI E DISPARI
-
 
 const insertedNum = parseInt(prompt('Inserisci un numero da 1 a 5.'));
 let pickOddEven = prompt('Scegli pari o dispari');
 let genNum;
-
 
 while (insertedNum < 1 || insertedNum > 5 || isNaN(insertedNum)){
     insertedNum = parseInt(prompt('Inserisci un numero da 1 a 5.'));
