@@ -17,7 +17,7 @@ function palindromeCheck(string){
     const lowRegStr = string.toLowerCase().replace(re, ''); // creazione di un'altra variabile per inserire la stringa in lowercase e sostituire i caratteri speciali con ''
     const reverseStr = lowRegStr.split('').reverse().join(''); // in un'altra variabile si splitta ogni carattere e si crea un array, s'inverte l'ordine degli elementi e si riunisce il tutto in un'unica stringa
     return reverseStr === lowRegStr; // la funzione controlla se la variabile con la stringa invertita equivale a quella normale e restituisce un valore booleano 
-  }
+}
 
 
 console.log(insertedWord);
